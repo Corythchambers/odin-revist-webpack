@@ -8,10 +8,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
-  mode: 'production', // Ensure it's in production mode
+  mode: 'production',
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // This should point to your source HTML file
+      template: './src/index.html',
     }),
   ],
 };
