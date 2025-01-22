@@ -1,25 +1,17 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-  entry: './src/index.js', // Your JavaScript entry file
+  entry: './src/index.js',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'), // Output directory
-    clean: true, // Cleans old files in dist
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
-  mode: 'development', // Set the mode to development
+  mode: 'production', // Ensure it's in production mode
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // Path to your HTML file
+      template: './src/index.html', // This should point to your source HTML file
     }),
   ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'), // Folder to serve static files
-    },
-    compress: true,
-    port: 8080,
-    open: true, // Automatically opens the browser
-  },
 };
